@@ -19,11 +19,11 @@ species = {
 df['class_value'] = df['class'].map(species)
 print(df['class_value'].value_counts())
 
-X = df.iloc[:, :4]
+X = df.iloc[:, :2]
 y = df.class_value
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
-model = DecisionTreeClassifier(max_depth=3)
+model = DecisionTreeClassifier(max_depth=5)
 model.fit(X_train, y_train)
 print(model.score(X_test, y_test))
 print(pd.DataFrame(confusion_matrix(y_test, model.predict(X_test))))
