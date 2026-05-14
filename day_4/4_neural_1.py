@@ -7,13 +7,13 @@ df = pd.read_csv('f-c.csv')
 
 model = Sequential()
 model.add(Dense(1, activation='linear'))
-model.add(Dense(2, activation='linear'))
-model.add(Dense(2, activation='relu'))
+# model.add(Dense(2, activation='linear'))
+# model.add(Dense(2, activation='relu'))
 model.add(Dense(1, activation='linear'))
 
 model.compile(optimizer='rmsprop', loss='mse')
 
-result = model.fit(df.F, df.C, epochs=200)
+result = model.fit(df.F, df.C, epochs=2000)
 
 C_pred = model.predict(df.F)
 plt.scatter(df.F, df.C)
