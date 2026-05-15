@@ -33,7 +33,7 @@ model.add(Dense(20, activation='linear'))
 model.add(Dense(1, activation='linear'))
 
 model.compile(optimizer='rmsprop', loss='mse')
-result = model.fit(x, y, epochs=20000)
+result = model.fit(x, y, epochs=3000)
 
 y_pred = model.predict(x)
 plt.scatter(x, y)
